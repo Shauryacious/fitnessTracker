@@ -21,7 +21,7 @@ export default function BottomNavigator() {
         showLabels={true}
         value={bnValue}
         onChange={(event, value) => setBnValue(value)}
-        style={{ backgroundColor: "#242525" }}
+        style={{ backgroundColor: "#242525", zIndex: 1000 }}
       >
         <BottomNavigationAction
           label="Home"

@@ -16,6 +16,7 @@ import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import heart from "./../../assets/heart.json";
 import Lottie from "lottie-react";
 import BarGraph from "../../components/BarGraph";
+import zIndex from "@mui/material/styles/zIndex";
 
 function Home() {
   // const [completerGoals, setCompleterGoals] = useState(0);
@@ -224,12 +225,12 @@ function Home() {
       >
         <div
           className="align-middle w-8/12 h-fit m-2"
-          style={{ backgroundColor: "#202121" }}
+          style={{ backgroundColor: "#202121", zIndex: 0 }}
         >
           <SwipeableButton
             onSuccess={onSuccess}
             text="Swipe to track all"
-            text_unlocked="Yeeeee!!!"
+            text_unlocked="Yeeee!!!"
             color="#D15439"
           />
         </div>
