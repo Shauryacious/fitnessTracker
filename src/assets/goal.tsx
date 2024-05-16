@@ -1,4 +1,6 @@
-const Goal = () => (
+import React from "react";
+
+const Goal: React.FC = () => (
   <svg
     width="80"
     height="80"
