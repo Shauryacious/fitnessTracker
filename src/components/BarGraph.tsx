@@ -20,6 +20,19 @@ ChartJS.register(
 );
 
 function BarGraph() {
+  const data = {
+    labels: ["28/4", "30/4", "02/5", "05/5", "11/5", "15/5", "16/5", "22/5"],
+    datasets: [
+      {
+        label: "Daily Updates",
+        data: [92, 100, 98, 90, 84, 82, 80, 80],
+        backgroundColor: ["#5A92CB"],
+        barPercentage: 0.55,
+        borderRadius: 1,
+      },
+    ],
+  };
+
   const options = {
     responsive: true,
     plugins: {
@@ -27,7 +40,7 @@ function BarGraph() {
         display: false,
       },
       tooltip: {
-        enabled: false, // This will disable the tooltip
+        enabled: true,
       },
     },
     scales: {
@@ -45,8 +58,8 @@ function BarGraph() {
           display: false,
         },
         ticks: {
-          stepSize: 20, // This will create 5 ticks from 0 to 100
-          callback: function (value, index, values) {
+          stepSize: 20,
+          callback: function (value: string) {
             return `${value}%`;
           },
           color: "white",
@@ -59,23 +72,8 @@ function BarGraph() {
       },
     },
   };
-  const data = {
-    labels: ["28/4", "30/4", "02/5", "05/5", "11/5", "15/5", "16/5", "22/5"],
-    datasets: [
-      {
-        label: "Demo Bar Graph",
-        data: [92, 100, 98, 90, 84, 82, 80, 80],
-        backgroundColor: ["#5A92CB"],
-        barPercentage: 0.55,
-        borderRadius: 1,
-      },
-    ],
-  };
 
-  return (
-    // <div className="h-64 w-96 border border-black m-10">
-    <Bar data={data} options={options} />
-  );
+  return <Bar data={data} options={options} />;
 }
 
 export default BarGraph;

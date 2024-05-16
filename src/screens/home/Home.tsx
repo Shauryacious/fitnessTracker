@@ -1,11 +1,9 @@
-import { Box, LinearProgress, Checkbox } from "@mui/material";
+import { LinearProgress, Checkbox } from "@mui/material";
 
 import { SwipeableButton } from "react-swipeable-button";
 
-import React, { useEffect } from "react";
-import { useState } from "react";
-import SvgComponent from "./../../assets/goal";
-import { blueGrey, pink } from "@mui/material/colors";
+import React, { useState, useCallback, useEffect } from "react";
+import Goal from "./../../assets/goal.jsx";
 
 import DirectionsWalkIcon from "@mui/icons-material/DirectionsWalk";
 import NightsStayIcon from "@mui/icons-material/NightsStay";
@@ -16,7 +14,6 @@ import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import heart from "./../../assets/heart.json";
 import Lottie from "lottie-react";
 import BarGraph from "../../components/BarGraph";
-import zIndex from "@mui/material/styles/zIndex";
 
 function Home() {
   // const [completerGoals, setCompleterGoals] = useState(0);
@@ -29,18 +26,21 @@ function Home() {
   const [tasks, setTasks] = useState<string[]>([]);
   const [progress, setProgress] = useState(0);
 
-  const handleTaskChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const idx = tasks.indexOf(event.target.value);
-    if (idx === -1) {
-      setTasks([...tasks, event.target.value]);
-    } else {
-      setTasks(tasks.filter((task) => task !== event.target.value));
-    }
-  };
+  const handleTaskChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const idx = tasks.indexOf(event.target.value);
+      if (idx === -1) {
+        setTasks([...tasks, event.target.value]);
+      } else {
+        setTasks(tasks.filter((task) => task !== event.target.value));
+      }
+    },
+    [tasks]
+  );
 
   useEffect(() => {
     setProgress((tasks.length / 5) * 100);
-  }, [tasks, handleTaskChange]);
+  }, [tasks]);
 
   const onSuccess = () => {
     setTasks(["workout", "read", "walk", "sleep", "water"]);
@@ -56,7 +56,7 @@ function Home() {
         }}
       >
         <div className="flex items-center">
-          <SvgComponent />
+          <Goal />
         </div>
         <div className="w-8/12 flex-shrink-0 p-4">
           <h1 className="text-white text-lg font-bold">

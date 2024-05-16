@@ -1,6 +1,4 @@
-import React from "react";
-
-import { Routes, Route, NavLink } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "../screens/home/Home";
 import Page1 from "../screens/page1/Page1";
 import Page2 from "../screens/page2/Page2";
