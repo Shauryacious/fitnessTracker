@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
@@ -7,8 +8,6 @@ import WhatshotIcon from "@mui/icons-material/Whatshot";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 import FastfoodIcon from "@mui/icons-material/Fastfood";
 import TimelineIcon from "@mui/icons-material/Timeline";
-
-import { useNavigate } from "react-router-dom";
 
 export default function BottomNavigator() {
   const navigate = useNavigate();

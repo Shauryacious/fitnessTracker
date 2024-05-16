@@ -6,6 +6,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  Tick,
 } from "chart.js";
 
 import { Bar } from "react-chartjs-2";
@@ -59,7 +60,12 @@ function BarGraph() {
         },
         ticks: {
           stepSize: 20,
-          callback: function (value: number) {
+          callback: function (
+            value: number | string,
+            index: number,
+            values: Tick[]
+          ) {
+            console.log(value, index, values);
             return `${value}%`;
           },
         },
