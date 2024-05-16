@@ -19,7 +19,10 @@ export default function BottomNavigator() {
       <BottomNavigation
         showLabels={true}
         value={bnValue}
-        onChange={(event, value) => setBnValue(value)}
+        onChange={(event, value) => {
+          console.log(event);
+          setBnValue(value);
+        }}
         style={{ backgroundColor: "#242525", zIndex: 1000 }}
       >
         <BottomNavigationAction

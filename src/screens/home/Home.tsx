@@ -3,7 +3,7 @@ import { LinearProgress, Checkbox } from "@mui/material";
 import { SwipeableButton } from "react-swipeable-button";
 
 import React, { useState, useCallback, useEffect } from "react";
-import Goal from "./../../assets/goal.jsx";
+import Goal from "../../assets/goal";
 
 import DirectionsWalkIcon from "@mui/icons-material/DirectionsWalk";
 import NightsStayIcon from "@mui/icons-material/NightsStay";

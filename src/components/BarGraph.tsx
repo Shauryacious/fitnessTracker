@@ -59,10 +59,9 @@ function BarGraph() {
         },
         ticks: {
           stepSize: 20,
-          callback: function (value: string) {
+          callback: function (value: number) {
             return `${value}%`;
           },
-          color: "white",
         },
       },
     },

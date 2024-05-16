@@ -1,7 +1,4 @@
-// SvgComponent.tsx
-import React from "react";
-
-const SvgComponent = () => (
+const Goal = () => (
   <svg
     width="80"
     height="80"
@@ -14,4 +11,4 @@ const SvgComponent = () => (
   </svg>
 );
 
-export default SvgComponent;
+export default Goal;
